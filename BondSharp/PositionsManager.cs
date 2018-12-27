@@ -4,19 +4,19 @@ namespace BondSharp
 {
     public class PositionsManager
     {
-        IEnumerable<Position> GetAllPositions() => _positions;
+        public IEnumerable<Position> GetAllPositions() => _positions;
 
-        void OpenPosition()
+        public void OpenPosition(Bond bond, BondTransaction transaction)
+        {
+            _positions.Add(new Position(bond, transaction));
+        }
+
+        public void ClosePosition()
         {
             
         }
 
-        void ClosePosition()
-        {
-            
-        }
-
-        void AddTransactionToOpenedPosition()
+        public void AddTransactionToOpenedPosition()
         {
             
         }
